@@ -8,12 +8,12 @@ function setup() {
 }
 
 function tri(x, y, lr, bend) {
-    const w = 120;
-    const lw = 60;
+    const w = 120; // triangle width
+    const t = 55; // line thickness
 
     noStroke();
 
-    // bg
+    // bg triangles
     const grey = rand(10) + 60;
     fill(grey);
     beginShape();
@@ -38,46 +38,46 @@ function tri(x, y, lr, bend) {
         fill(180);
         if (lr) {
             /*     < \     */
-            vertex(x + (w - lw) / 2, y + (w + lw) / 4);
-            vertex(x + (w + lw) / 2, y + (w - lw) / 4);
-            vertex(x + w, y + (w - lw) / 2);
-            vertex(x + w, y + (w + lw) / 2);
+            vertex(x + (w - t) / 2, y + (w + t) / 4);
+            vertex(x + (w + t) / 2, y + (w - t) / 4);
+            vertex(x + w, y + (w - t) / 2);
+            vertex(x + w, y + (w + t) / 2);
         } else {
             /*     \ >     */
-            vertex(x, y + (w - lw) / 2);
-            vertex(x + (w + lw) / 2, y + w - (w + lw) / 4);
-            vertex(x + (w - lw) / 2, y + w - (w - lw) / 4);
-            vertex(x, y + (w + lw) / 2);
+            vertex(x, y + (w - t) / 2);
+            vertex(x + (w + t) / 2, y + w - (w + t) / 4);
+            vertex(x + (w - t) / 2, y + w - (w - t) / 4);
+            vertex(x, y + (w + t) / 2);
         }
     } else if (bend === 1) {
         fill(180);
         if (lr) {
             /*     < /     */
-            vertex(x + w, y + (w - lw) / 2);
-            vertex(x + w, y + (w + lw) / 2);
-            vertex(x + (w + lw) / 2, y + w - (w - lw) / 4);
-            vertex(x + (w - lw) / 2, y + w - (w + lw) / 4);
+            vertex(x + w, y + (w - t) / 2);
+            vertex(x + w, y + (w + t) / 2);
+            vertex(x + (w + t) / 2, y + w - (w - t) / 4);
+            vertex(x + (w - t) / 2, y + w - (w + t) / 4);
         } else {
             /*     / >     */
-            vertex(x, y + (w - lw) / 2);
-            vertex(x + (w - lw) / 2, y + (w - lw) / 4);
-            vertex(x + (w + lw) / 2, y + (w + lw) / 4);
-            vertex(x, y + (w + lw) / 2);
+            vertex(x, y + (w - t) / 2);
+            vertex(x + (w - t) / 2, y + (w - t) / 4);
+            vertex(x + (w + t) / 2, y + (w + t) / 4);
+            vertex(x, y + (w + t) / 2);
         }
     } else {
         fill(240);
         if (lr) {
             /*     < |     */
-            vertex(x + (w - lw) / 2, y + (w + lw) / 4);
-            vertex(x + (w + lw) / 2, y + (w - lw) / 4);
-            vertex(x + (w + lw) / 2, y + w - (w - lw) / 4);
-            vertex(x + (w - lw) / 2, y + w - (w + lw) / 4);
+            vertex(x + (w - t) / 2, y + (w + t) / 4);
+            vertex(x + (w + t) / 2, y + (w - t) / 4);
+            vertex(x + (w + t) / 2, y + w - (w - t) / 4);
+            vertex(x + (w - t) / 2, y + w - (w + t) / 4);
         } else {
             /*     | >     */
-            vertex(x + (w - lw) / 2, y + (w - lw) / 4);
-            vertex(x + (w + lw) / 2, y + (w + lw) / 4);
-            vertex(x + (w + lw) / 2, y + w - (w + lw) / 4);
-            vertex(x + (w - lw) / 2, y + w - (w - lw) / 4);
+            vertex(x + (w - t) / 2, y + (w - t) / 4);
+            vertex(x + (w + t) / 2, y + (w + t) / 4);
+            vertex(x + (w + t) / 2, y + w - (w + t) / 4);
+            vertex(x + (w - t) / 2, y + w - (w - t) / 4);
         }
     }
 
